@@ -23,16 +23,16 @@ function setup() {
 
     //canonBall = new CanonBall(600,200);
     ground = new Ground();
-    ball1 = new Ball(500,0,25);
-    ball2 = new Ball(950,50,25);
-    ball3 = new Ball(800,10,25);
-    ball4 = new Ball(650,20,25);
+    ball1 = new Ball(500,-50,30,"#FF007F");
+    ball2 = new Ball(950,50,30,"#FF007F");
+    ball3 = new Ball(800,0,30,"#FF007F");
+    ball4 = new Ball(650,100,30,"#FF007F");
     tanker = new Tanker(PI);
 }
 
 function draw() {
     // Remember to update the Matter Engine and set the background.
-    background("black");
+    background("#3333FF");
 
     Engine.update(engine);
     //canonBall.display();

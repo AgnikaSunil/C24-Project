@@ -1,5 +1,5 @@
 class Ball {
-  constructor(x,y,radius) {
+  constructor(x,y,radius,color) {
     var options ={
         frictionAir: 0,
         friction: 0,
@@ -9,6 +9,7 @@ class Ball {
     }
     this.body = Bodies.circle(x,y, radius, options);
     this.radius = radius;
+    this.color = color;
     World.add(world,this.body);
     
   }
@@ -16,7 +17,7 @@ class Ball {
   display() {
     var pos = this.body.position;
     push();
-    fill("blue");
+    fill(this.color);
     circle(pos.x,pos.y,this.radius);
     pop();
   }
