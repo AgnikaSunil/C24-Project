@@ -24,10 +24,11 @@ function setup() {
     //canonBall = new CanonBall(600,200);
     ground = new Ground();
     ball1 = new Ball(500,-50,30,"#FF007F");
-    ball2 = new Ball(950,50,30,"#FF007F");
-    ball3 = new Ball(800,0,30,"#FF007F");
-    ball4 = new Ball(650,100,30,"#FF007F");
-    tanker = new Tanker(PI);
+    ball2 = new Ball(860,50,30,"#FF007F");
+    ball3 = new Ball(740,0,30,"#FF007F");
+    ball4 = new Ball(620,100,30,"#FF007F");
+    ball5 = new Ball(980,-100,30,"#FF007F");
+    tanker = new Tanker();
 }
 
 function draw() {
@@ -42,6 +43,7 @@ function draw() {
     ball2.display();
     ball3.display();
     ball4.display();
+    ball5.display();
     tanker.display();
     keyReleased();
 }
