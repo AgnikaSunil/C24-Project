@@ -1,4 +1,4 @@
-/*class CanonBall {
+class CannonBall {
   constructor(x, y) {
     var options = {
       "density" :   1.5,
@@ -6,17 +6,18 @@
       "restitution" : 0.8,
       "frictionAir":0.06
     }
-    this.body = Bodies.circle(x,y,50,options);
-    this.width = 90;
-    this.image = loadImage("assets/canonBall.png");
+    this.body = Bodies.circle(x,y,10,options);
+    this.width = 40;
+    this.image = loadImage("assets/cannonBall.png");
     World.add(world,this.body);
   };
 
-  display(){
+  display(height){
     var pos = this.body.position;
+    this.height = height;
     push();
     imageMode(CENTER);
-    image(this.image, pos.x, pos.y, this.width);
+    image(this.image, pos.x, pos.y, this.width, this.height);
     pop();
   };
-};*/
+};

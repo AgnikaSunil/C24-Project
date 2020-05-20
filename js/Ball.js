@@ -17,6 +17,8 @@ class Ball {
   display() {
     var pos = this.body.position;
     push();
+    strokeWeight(1);
+    stroke("pink");
     fill(this.color);
     circle(pos.x,pos.y,this.radius);
     pop();

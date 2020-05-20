@@ -9,8 +9,12 @@ const {Engine} = Matter
 is the same as c
 onst Engine = Matter.Engine
 
-*/ var engine,world;
-var canonBall,ground;
+*/
+
+var engine,world;
+var cannonBall,ground;
+var tanker,ball1,ball2,ball3,ball4,ball5;
+var attachment;
 
 function setup() {
     // Setup the canvas, the ground the, tanker, the shooting ball and the bubble balls.
@@ -29,6 +33,8 @@ function setup() {
     ball4 = new Ball(620,100,30,"#FF007F");
     ball5 = new Ball(980,-100,30,"#FF007F");
     tanker = new Tanker();
+    cannonBall = new CannonBall(200,200);
+    attachment = new ShootBall(cannonBall.body,{x:140,y:310});
 }
 
 function draw() {
@@ -36,7 +42,6 @@ function draw() {
     background("#3333FF");
 
     Engine.update(engine);
-    //canonBall.display();
     text(mouseX+','+mouseY,200,200);
     ground.display();
     ball1.display();
@@ -44,11 +49,25 @@ function draw() {
     ball3.display();
     ball4.display();
     ball5.display();
+    cannonBall.display(50);
     tanker.display();
+    attachment.display();
     keyReleased();
+    reload();
 }
-
 
 function keyReleased() {
     // Call the shoot method for the cannon.
+    if(keyCode === 32){
+        attachment.shoot();
+        Matter.Body.applyForce(cannonBall.body,cannonBall.body.position,{x:10,y:-1});
+    }
+    
+}
+
+function reload(){
+    // Reloading the bullet
+    if(keyCode === 13){
+        attachment.attach(cannonBall.body);
+    }
 }
